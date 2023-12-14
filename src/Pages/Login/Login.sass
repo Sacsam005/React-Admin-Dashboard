@@ -1,0 +1,89 @@
+@import "../../App.sass"
+
+.login_container
+    height: 100%
+    @include flexCenter
+
+.login_page
+    @include flexColumnCenter
+    padding: $largePadding
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(33, 33, 33) 0px 0px 0px 3px
+    width: 400px
+    max-width: 100%
+    margin: 0 auto
+    @media screen and (max-width: 500px)
+        margin: 0 $standardMargin
+        align-self: center
+        overflow: hidden
+        width: auto
+    span
+        color: $dangerColor
+
+    h5 
+        margin-bottom: $medMargin
+        text-align: center
+        font-weight: 700
+
+    .profile_pic_container 
+        @include flexColumnCenter
+        .upload_pic_label
+            &:hover
+                border: 0
+
+        label 
+            margin-bottom: $smallMargin
+            text-align: left
+            cursor: pointer
+        
+        input[type="file"] 
+            margin-bottom: $medMargin
+
+        img 
+            width: 50px
+            height: 50px
+            object-fit: cover
+            margin-bottom: $smallMargin
+            border-radius: 50%
+            box-shadow: $boxShadow
+
+    .username_container, .password_container
+        @include flexColumn
+        align-items: flex-start
+        margin-bottom: $medMargin
+
+        label 
+            margin-bottom: $standardMargin
+
+        input[type="text"] 
+            padding: $smallMargin
+            width: 360px
+            max-width: 100%
+            border: 1px solid $fadeGray
+            &::placeholder
+                opacity: 0.5 !important
+            &:active, &:focus, &:hover
+                outline: none
+    
+    button 
+        padding: $medMargin $largeMargin
+        background-color: $highlightColor
+        border: none
+        cursor: pointer
+        width: 100%
+        &:hover 
+            box-shadow: $boxShadow
+
+    .signin_note
+        max-width: 500px
+        @media screen and (max-width: 500px)
+            max-width: 100%
+        p
+            text-align: justify
+            text-justify: inter-word
+
+    @media screen and (max-width: 768px) 
+        .profile_pic_container,
+        .username_container, .password_container
+            max-width: 100%
+    
+  

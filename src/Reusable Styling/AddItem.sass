@@ -1,0 +1,90 @@
+@import "../App.sass"
+    
+.add_item_title_div
+    -webkit-box-shadow: $boxShadow
+    box-shadow: $boxShadow
+    padding: $standardPadding
+    margin: $standardMargin
+
+.add_item_container
+    @include flexColumnCenter
+
+    .add_user_item_div_wrapper 
+        -webkit-box-shadow: $boxShadow
+        box-shadow: $boxShadow
+        padding: $standardPadding
+        margin: $standardMargin
+        max-width: 100%
+        width: 700px
+        @media screen and (max-width: 768px)
+            width: 450px
+            max-width: 100%
+        @media screen and (max-width: 500px)
+            @include flexColumnCenter
+        @media screen and (max-width: 360px)
+            width: 325px
+
+        .add_user_item_div
+            @include flexColumnCenter
+            padding: 1rem
+                
+            .add_user_div_left 
+                flex: 1
+                text-align: center
+                img 
+                    width: 100px
+                    height: 100px
+                    border-radius: 50%
+                    object-fit: cover
+        
+        .form_div 
+            flex: 2
+            form 
+                gap: $standardMargin
+                @include flexColumnCenter
+                align-items: flex-start
+
+                .form_input_div
+                    @include displayGrid(1fr 1fr, auto )
+                    gap: $largeMargin
+                    place-items: center
+                    @media screen and (max-width: 768px)
+                        grid-template-columns: 1fr 
+                    .form_input
+                        label 
+                            @include flexBetweenCenter
+                            gap: $standardMargin
+                            .icon 
+                                cursor: pointer
+                        input 
+                            min-width: 100%
+                            width: 250px
+                            border: none
+                            border-bottom: 1px solid $lightGray
+                            &::placeholder
+                                opacity: 0.5
+
+                button 
+                    width: 150px
+                    padding: $medPadding
+                    background-color: $primaryColor
+                    color: $lightFontColor
+                    cursor: pointer
+                    @include resetBorder
+            
+    .item_list_div
+        width: 100%
+        overflow: hidden
+
+.view_btn 
+    padding: 2px 5px
+    border: 1px solid #027f89
+    cursor: pointer
+
+.delete_btn 
+    padding: 2px 5px
+    color: red
+    border: 1px solid red
+    cursor: pointer
+  
+        

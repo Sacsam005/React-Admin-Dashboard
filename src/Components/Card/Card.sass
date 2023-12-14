@@ -1,0 +1,24 @@
+@import '../../App.sass'
+
+.card_div
+    @include standardContainerStyling
+    width: 100%
+    max-width: 450px
+    margin: $standardMargin
+    padding: $standardPadding
+
+    .card_div_left_content,.card_div_right_content
+        @include flexColumnBetweenCenter
+       
+        p
+            margin: $standardMargin 0 0 0
+
+        .title, .icon
+            color: $primaryColor
+            font-weight: $bold
+
+        .link
+            display: inline-block
+            border-bottom: 2px solid #888
+   
+        
