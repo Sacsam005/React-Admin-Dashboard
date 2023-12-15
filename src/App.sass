@@ -1,0 +1,132 @@
+// Font sizes
+$standardFont: 1rem
+$extraSmallFont: 10px
+$smallFont: 14px
+$medFont: 1.25rem
+$largeFont: 1.75rem
+
+// Font weight
+$regular: 500
+$semiBold: 700
+$bold: 900
+
+// Colors
+$primaryColor: #20B2AA
+$secondaryColor: #94CF96
+$primaryBgColor: #027F89
+$highlightColor: #FFC166
+$lightFontColor: #ddd
+$darkFontColor: #222
+$grayFont: #3c3b3f
+$lightGray: #555
+$fadeGray: #888
+$blue: #0B4E91
+$dangerColor: #D6535A
+$boxShadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px
+
+// Margins and paddings
+$standardPadding: 0.5rem
+$smallPadding: 0.25rem
+$medPadding: 0.75rem
+$largePadding: 1rem
+
+$standardMargin: 0.5rem
+$smallMargin: 0.25rem
+$medMargin: 0.75rem
+$largeMargin: 1rem
+
+// A shared style for both color modes
+%shared-styles
+    .table,
+    .data_grid,
+    .card_div,
+    .summary_card_div,
+    .users_list_container p,
+    // Resetting MUI Data table color
+    .css-16c50h-MuiInputBase-root-MuiTablePagination-select,
+    div.MuiTablePagination-actions > button,
+    .css-rtrcn9-MuiTablePagination-root .MuiTablePagination-selectLabel,
+    .MuiToolbar-root,
+    .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon 
+        color: $lightFontColor
+
+// Apply styles for dark mode
+.dark_mode 
+    background: $grayFont
+    color: $lightFontColor
+    @extend %shared-styles
+
+// Apply styles for blue mode
+.blue_color_mode 
+    background: #0B4E91
+    color: $lightFontColor
+    @extend %shared-styles
+
+// Reset Styling
+@mixin resetStyle
+    margin: 0
+    padding: 0
+
+@mixin resetTextDecoration
+    text-decoration: none
+    list-style: none
+
+@mixin resetBorder
+    border: none
+    outline: none
+
+// Mixins
+@mixin flexColumn
+    display: flex
+    flex-direction: column
+
+@mixin flexBetweenNoAlign
+    display: flex
+    justify-content: space-between
+
+@mixin flexBetweenCenter
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+@mixin flexCenter
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin flexColumnCenter
+    @include flexColumn
+    justify-content: center
+    align-items: center
+
+@mixin flexColumnBetweenCenter
+    @include flexColumn
+    justify-content: space-between
+    align-items: center
+
+@mixin displayGrid($columns: repeat(auto-fit, minmax(200px, 1fr)), $rows:auto)
+    display: grid
+    grid-template-columns: $columns
+    grid-template-rows: $rows
+
+@mixin standardContainerStyling
+    width: 100%
+    margin: $smallMargin
+    padding: $smallPadding
+    @include flexBetweenNoAlign
+    box-shadow: $boxShadow
+
+//GLobal Styling
+html,
+body 
+    font-family: "Source Sans Pro", sans-serif
+    @include resetStyle
+    box-sizing: border-box
+    color: $grayFont
+
+.app
+    height: 100vh
+
+input
+    border-radius:0
+    -webkit-appearance: none

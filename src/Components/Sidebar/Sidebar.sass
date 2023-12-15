@@ -1,0 +1,111 @@
+@import "../../App.sass"
+
+.dashboard_container_left_panel
+    flex: 1
+    transition: 0.3s
+    box-shadow: $boxShadow
+    width: 185px
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    z-index: 1
+    overflow-y: auto
+    @media screen and (max-width: 768px)
+        all: unset
+        display: none
+        max-height: 100%
+        position: relative
+    .sidebar_menu_items_top_div
+        padding: $medPadding
+        position: relative
+        h6
+            text-align: left
+            margin: $largeMargin 0 $standardMargin 0
+            padding: 0
+            font-weight: $semiBold
+            color: $primaryColor
+            @media screen and (max-width: 768px)
+                font-size: $standardFont
+        ul
+            @include resetStyle
+            @include resetTextDecoration
+            
+            li
+                @include flexCenter
+                justify-content: flex-start
+                margin: $medMargin 0
+                cursor: pointer
+                @media screen and (max-width: 768px)
+                    margin: $smallMargin 0
+                .icon
+                    color: $primaryColor
+                    @media screen and (max-width: 768px)
+                        font-size: $smallFont
+                p
+                    margin: 0 0 0 $smallMargin
+                    @media screen and (max-width: 768px)
+                        font-size: $smallFont
+    
+    .sidebar_menu_color_option_div
+        h6
+            color: $primaryColor
+            font-weight: $semiBold
+        .color_option_div_wrapper
+            @include flexCenter
+            margin: $medMargin
+            .color_option_div
+                height: 20px
+                width: 20px
+                border: 1px solid $primaryColor
+                cursor: pointer
+                margin: 0 0 0 $standardMargin
+                &:nth-child(1)
+                    background-color: $lightFontColor
+                &:nth-child(2)
+                    background-color: $grayFont
+                &:nth-child(3)
+                    background-color: $blue
+
+    .sidebar_bottom_profile_div
+        position: relative
+        font-size: $smallFont
+        @include flexBetweenCenter
+        padding: $standardPadding
+        box-shadow: 0 -3px 5px -5px rgba(0, 0, 0, 0.75)
+
+        .bottom_profile_img_div
+            background-color: $primaryBgColor
+            border-radius: $extraSmallFont
+        .bottom_profile_admin_info
+            h6, p
+                @media screen and (max-width: 768px)
+                    font-size: $smallFont
+                @media screen and (max-width: 500px)
+                    font-size: $extraSmallFont
+            h6
+                font-weight: $semiBold
+    
+    .logout_prompt_div
+            position: absolute
+            bottom: 95%
+            left: 0
+            z-index: 1
+            color: $lightFontColor
+            background-color: $primaryBgColor
+            display: none
+            margin: $smallMargin
+            .logout_text
+                @media screen and (max-width: 768px)
+                    font-size: $smallFont
+
+            .logout_no_btn, .logout_yes_btn
+                width: 50px
+                padding: $smallPadding
+                &:active, &:focus, &:hover
+                    outline: none
+                    border: 0
+                @media screen and (max-width: 768px)
+                    font-size: $smallFont
+                    padding: 0.1rem
+    

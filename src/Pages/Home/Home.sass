@@ -1,0 +1,46 @@
+@import '../../App.sass'
+
+.dashboard_container_main
+    display: flex
+    position: relative
+    height: 100vh
+    .dashboard_container_right_panel
+        flex: 6
+        overflow-x: hidden
+        margin-left: 190px
+        @media screen and (max-width: 768px)
+            max-width: 100%
+            margin-left: 0
+        .cards_container
+            @include displayGrid()
+            gap: $standardMargin
+            flex: 1
+            padding: $standardPadding
+            margin-right: $largeMargin
+            @media screen and (max-width: 992px)
+                font-size: 14px
+                margin-right: $medMargin
+            @media screen and (max-width: 768px)
+                @include displayGrid(1fr 1fr, auto )
+                place-items: center
+                margin-right: 0
+            @media screen and (max-width: 400px)
+                grid-template-columns: 1fr
+
+        .charts_container
+            @include displayGrid(1fr 1fr, auto )
+            gap: $standardMargin
+            padding: $standardPadding
+            @media screen and (max-width: 992px)
+                grid-template-columns: 1fr
+
+        .summary_cards_container
+            @include displayGrid(repeat(auto-fit, minmax(250px, 1fr)), 375px )
+            gap: $standardMargin
+            padding: $standardPadding
+            @media screen and (max-width: 500px)
+                padding: 0
+            
+        .lists_container
+            margin-top: $standardMargin
+            box-shadow: $boxShadow
