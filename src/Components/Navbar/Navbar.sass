@@ -1,0 +1,168 @@
+@import '../../App.sass'
+
+.navbar_container
+    position: relative
+    @include standardContainerStyling
+    margin: 0
+    font-size: $smallFont
+    @media screen and (max-width: 768px)
+        flex-direction: column
+
+    .navbar_logo_div
+        display: flex
+        align-items: center
+        font-weight: $semiBold
+        color: $primaryColor
+        @media screen and (max-width: 768px)
+            justify-content: space-between
+        .hamburger_menu_btn
+            display: none
+            @media screen and (max-width: 768px)
+                display: block
+
+    .counter
+        width: 15px
+        height: 15px
+        background-color: red
+        border-radius: 50%
+        color: $lightFontColor
+        @include flexCenter
+        font-size: $extraSmallFont
+        font-weight: $bold
+        position: absolute
+        top: -5px
+        right: -5px
+
+    .read_state
+        width: 220px
+        position: absolute
+        top: 1%
+        right: 5%
+        margin-right: $standardMargin * 3
+        padding: $standardPadding 
+        color: $darkFontColor
+        background: $highlightColor
+        z-index: 1000
+        cursor: pointer
+
+    .search_and_settings_div
+        display: flex
+        position: relative
+        @media screen and (max-width: 768px)
+            justify-content: space-between
+        .search_div
+            @include flexCenter
+            border: 2px solid $primaryColor
+            // padding: 0 $smallPadding
+            position: relative
+            @media screen and (max-width: 768px)
+                margin-left: $smallMargin
+            .search_input
+                font-size: $standardFont
+                @include resetBorder
+                @media screen and (max-width: 500px)
+                    width: 100%
+                &::placeholder
+                    font-size: $smallFont
+        
+        .searched_items_div_container
+            position: absolute
+            top: 60%
+            left: 0
+            margin-top: 1rem
+            z-index: 1
+            border: 1.5px solid $primaryBgColor
+            background: $lightFontColor
+
+        .items_div_wrapper
+            position: relative
+
+            .items_div
+                position: absolute
+                top: 1%
+                right: 35%
+                display: none
+                transition: 0.4s
+                background-color: $primaryBgColor
+                color: $lightFontColor
+                padding: $standardPadding $largePadding
+                z-index: 2
+                cursor: pointer
+                width: 165px
+
+                .item
+                    @include flexCenter
+                    justify-content: flex-start
+                    position: relative
+                    margin-top: $standardMargin
+                    border-bottom: 1px solid #1B8B94
+                    
+                    .icon
+                        cursor: pointer
+
+            .welcome_popup_div
+                position: absolute
+                top: 40px
+                right: 10%
+                z-index: 2
+                background-color: $primaryColor
+                color: $lightFontColor
+                width: 300px
+                padding: $medPadding
+                @media screen and (max-width: 500px)
+                    width: 250px
+                @media screen and (max-width: 360px)
+                    width: 200px
+                span
+                    color: $highlightColor
+                .icon
+                    position: absolute
+                    top: 0
+                    right: 0
+                    background-color: red
+                    padding: $smallPadding
+                    z-index: 1
+                    cursor: pointer
+                    @media screen and (max-width: 360px)
+                        font-size: $standardFont
+
+        .user_profile_div
+            margin: 0 $standardMargin 0 0
+            cursor: pointer
+            .username
+                color: $primaryColor
+                font-weight: $semiBold
+                margin: 0 $smallMargin 0 $largeMargin
+
+    .admin_profile_div
+        display: none
+        position: absolute
+        top: 1%
+        right: 65%
+        width: 180px
+        background: #027F89
+        color: $lightFontColor
+        padding: $medPadding
+        z-index: 1
+        @media screen and (max-width: 1024px)
+            top: 50%
+            right: 8%
+            margin-top: 9rem
+        
+        .admin_info_div
+            .admin_name_and_img_div
+                display: flex
+                
+            .admin_info_text_div
+                
+            span
+                font-weight: 500
+                color: $highlightColor
+
+    .avatar
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        z-index: 1
+    
+        
